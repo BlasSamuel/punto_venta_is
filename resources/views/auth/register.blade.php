@@ -3,8 +3,9 @@
     Registrar
 @endsection
 @section('contenido')
+<div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 mt-5">
             <div class="card">
                 <div class="card-header">Registrar</div>
 
@@ -12,7 +13,7 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Nombre</label>
 
                             <div class="col-md-6">
@@ -27,7 +28,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-3">
                             <label for="email"
                                    class="col-md-4 col-form-label text-md-right">Correo electrónico</label>
 
@@ -43,7 +44,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-3">
                             <label for="password"
                                    class="col-md-4 col-form-label text-md-right">Contraseña</label>
 
@@ -60,7 +61,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-3">
                             <label for="password-confirm"
                                    class="col-md-4 col-form-label text-md-right">Confirmar contraseña</label>
 
@@ -81,5 +82,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 @endsection

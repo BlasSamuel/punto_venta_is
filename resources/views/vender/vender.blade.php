@@ -1,29 +1,11 @@
-{{--
 
-  ____          _____               _ _           _
- |  _ \        |  __ \             (_) |         | |
- | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___
- |  _ <| | | | |  ___/ _` | '__|_  / | '_ \| | | | __/ _ \
- | |_) | |_| | | |  | (_| | |   / /| | |_) | |_| | ||  __/
- |____/ \__, | |_|   \__,_|_|  /___|_|_.__/ \__, |\__\___|
-         __/ |                               __/ |
-        |___/                               |___/
-
-    Blog:       https://parzibyte.me/blog
-    Ayuda:      https://parzibyte.me/blog/contrataciones-ayuda/
-    Contacto:   https://parzibyte.me/blog/contacto/
-
-    Copyright (c) 2020 Luis Cabrera Benito
-    Licenciado bajo la licencia MIT
-
-    El texto de arriba debe ser incluido en cualquier redistribucion
---}}
 @extends("maestra")
 @section("titulo", "Realizar venta")
 @section("contenido")
+<div class="container">
     <div class="row">
         <div class="col-12">
-            <h1>Nueva venta <i class="fa fa-cart-plus"></i></h1>
+            <h1 class="text-center">Nueva venta <i class="fa fa-cart-plus"></i></h1>
             @include("notificacion")
             <div class="row">
                 <div class="col-12 col-md-6">
@@ -38,7 +20,10 @@
                             </select>
                         </div>
                         @if(session("productos") !== null)
-                            <div class="form-group">
+                        <div class="container-fluid">
+                            <div class="row justify-content-center">
+                                <div class="col-sm">
+                                <div class="form-group mt-3">
                                 <button name="accion" value="terminar" type="submit" class="btn btn-success">Terminar
                                     venta
                                 </button>
@@ -46,6 +31,10 @@
                                     venta
                                 </button>
                             </div>
+                                </div>
+                            </div>
+                        </div>
+                            
                         @endif
                     </form>
                 </div>
@@ -62,7 +51,7 @@
                 </div>
             </div>
             @if(session("productos") !== null)
-                <h2>Total: ${{number_format($total, 2)}}</h2>
+                <h2 class="mt-2">Total: ${{number_format($total, 2)}}</h2>
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead>
@@ -97,10 +86,26 @@
                     </table>
                 </div>
             @else
-                <h2>Aquí aparecerán los productos de la venta
-                    <br>
-                    Escanea el código de barras o escribe y presiona Enter</h2>
+            <div class="container mt-3">
+            <div class="row justify-content-center">
+            <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Aquí aparecerán los productos de la venta</h5>
+   
+    <p class="card-text">
+                   
+                    Escanea el código de barras o escribe y presiona Enter</p>
+    
+  </div>
+</div>
+            </div>
+
+            </div>
+            
+                
+                    
             @endif
         </div>
     </div>
+</div>
 @endsection
